@@ -1,0 +1,7 @@
+shl-recommender/
+├── app.py                # Streamlit web application
+├── api.py                # FastAPI backend
+├── scraper.py            # Data collection from SHL
+├── utils.py              # Helper functions
+├── requirements.txt      # Dependencies
+└── README.md             # Project documentation
