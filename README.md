@@ -23,7 +23,7 @@ Tired of manually searching through SHL's assessment catalog? This system:
 ### Installation
 1. Clone this repository:
 
-   git clone https://github.com/yourusername/shl-recommender.git
+   git clone https://github.com/KOMMUMADHU602/shl-Assessment-recommendation-system
    cd shl-recommender
 
 
@@ -70,6 +70,7 @@ shl-recommender/
 ├── assessments.json      # Assessment database
 ├── requirements.txt      # Dependencies
 └── README.md             # This file
+
 
 
 ## 💡 Why This Matters
