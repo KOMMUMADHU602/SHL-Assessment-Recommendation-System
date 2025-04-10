@@ -1,78 +1,98 @@
-# SHL-Assessment-Recommendation-System
- smart AI-powered tool that helps recruiters instantly find the most relevant SHL assessments for any job role—saving hours of manual searching with natural language queries.
-Here’s a polished, engaging description of your SHL Assessment Recommendation System project that clearly communicates its purpose, value, and technical approach:
+
+### 🧠 SHL Assessment Recommendation System
+
+*A smart tool that helps hiring managers find the perfect SHL assessments for their job openings*
+
+<img width="539" alt="result" src="https://github.com/user-attachments/assets/3af039be-38b7-4bd3-b5fb-c00cb0c2afb4" />
+
+## 🌟 What Does This Do?
+
+Tired of manually searching through SHL's assessment catalog? This system:
+
+ Takes a **natural language query** (e.g., "Java developer test under 45 minutes")
+ Or a **full job description**
+ Recommends the **most relevant SHL assessments** with all key details
+ Shows results in a clean, clickable format
+
+## 🚀 Quick Start
+
+### Prerequisites
+ Python 3.8+
+ pip package manager
+
+### Installation
+1. Clone this repository:
+
+   git clone https://github.com/yourusername/shl-recommender.git
+   cd shl-recommender
 
 
-### Project Description: SHL Assessment Recommendation System
+2. Set up the environment:
+   
+   python -m venv venv
+   source venv/bin/activate  # Windows: venv\Scripts\activate
+   pip install -r requirements.txt
+   
 
-TL;DR: 
-A smart AI-powered tool that helps recruiters instantly find the most relevant SHL assessments for any job role—saving hours of manual searching with natural language queries.  
+### Running the System
+1. **First, start the API** (in one terminal):
+   
+   python api.py
+   
+   *API will run at `http://localhost:8000`*
 
-#### **🔍 The Problem**  
-Hiring managers struggle to navigate SHL’s vast assessment catalog. Traditional keyword searches are time-consuming and often miss the mark, especially for complex roles requiring multiple skills or specific testing constraints (e.g., *"Find a 45-minute Java test with teamwork evaluation"*).  
+2. **Then launch the web app** (in another terminal):
+   
+   streamlit run app.py
+   
+   *App will open in your browser at `http://localhost:8501`*
 
-#### **✨ The Solution**  
-This system leverages **generative AI** and **semantic search** to:  
- **Understand job descriptions** or free-text queries (e.g., *"Python developer test under 30 minutes"*).  
- **Recommend tailored SHL assessments** with key details:  
-   Test name & direct SHL catalog link  
-   Remote testing support (Yes/No)  
-   Duration and test type (Cognitive, Technical, etc.)  
- **Prioritize accuracy** with Recall@3 and MAP@3 metrics to ensure top recommendations are relevant.  
+## 🛠️ How It Works
 
-#### **🛠️ How It Works**  
-1. **Data Pipeline**:  
-    Scrapes SHL’s product catalog (or uses mock data for prototyping).  
-    Structures assessments with embeddings for AI search.  
+### Behind the Scenes
+1. **Data Collection**: Our scraper gathers SHL assessment details
+2. **Smart Matching**: Uses AI embeddings to understand your query
+3. **Precision Filtering**: Automatically detects time constraints
+4. **Clean Presentation**: Shows only the most relevant assessments
 
-2. **AI Matching**:  
-    Uses 'sentence-transformers' to convert queries/job descriptions into semantic vectors.  
-    Ranks assessments by cosine similarity to the query.  
+### Try These Example Queries
+ "I need a Java test under 40 minutes"
+ "Cognitive and personality tests for analysts"
+ "Python and SQL assessment package for mid-level hires"
 
-3. **Smart Filters**:  
-    Auto-detects time constraints (e.g., *"under 40 minutes"*).  
-    Supports hybrid searches (skills + behavioral traits).  
+## 📂 Project Structure
 
-4. **User-Friendly Interface**:  
-    **Streamlit web app** for simple input/output.  
-    **FastAPI backend** for scalable recommendations (JSON-ready).  
-
-#### **🚀 Key Features**  
- **Natural Language Understanding**: No rigid syntax—works with plain English.  
- **Time-Saving**: Cuts search time from hours to seconds.  
- **Transparent Results**: Clear comparison of test attributes.  
- **Extensible**: Easy to integrate with SHL’s live catalog or other HR tools.  
-
-#### **🌐 Real-World Impact**  
- **Recruiters**: Quickly find tests matching exact role requirements.  
- **Candidates**: Better-matched assessments improve hiring fairness.  
- **SHL**: Enhances product discoverability and user experience.  
-
-#### **🖥️ Tech Stack**  
- **Backend**: Python, FastAPI, Sentence-Transformers ('all-MiniLM-L6-v2')  
- **Frontend**: Streamlit (low-code UI)  
- **Data**: Web scraping (BeautifulSoup), embeddings, cosine similarity  
- **Metrics**: Recall@3, MAP@3 for evaluation  
-
-#### **📌 Example Use Case**  
-> *Query*: *"I need a cognitive and personality test for analysts, max 45 minutes"*  
-> *Output*:  
-> 1. **SHL Cognitive Ability Test** (30 mins, Remote: Yes)  
-> 2. **SHL Personality Questionnaire** (20 mins, Remote: Yes)  
-> 3. **SHL Verify G+** (Adaptive, 30 mins)  
+shl-recommender/
+├── app.py                # Web interface (Streamlit)
+├── api.py                # Recommendation API (FastAPI)
+├── scraper.py            # SHL data collector
+├── utils.py              # Core recommendation logic
+├── assessments.json      # Assessment database
+├── requirements.txt      # Dependencies
+└── README.md             # This file
 
 
+## 💡 Why This Matters
+ Saves recruiters **hours of manual searching**
+ Understands **real job requirements** (not just keywords)
+ **Adapts to time constraints** automatically
+ Presents results in a **hiring-manager-friendly format**
 
-### **Why This Stands Out**  
-Unlike static filters, this system **understands intent** and **context**, making it ideal for complex hiring scenarios. It’s designed for SHL’s catalog but can adapt to other assessment providers.  
+## 🛠️ Built With
+ **Python** - Core programming language
+ **Streamlit** - Simple web interface
+ **FastAPI** - Robust backend API
+ **Sentence Transformers** - AI-powered semantic search
+ **BeautifulSoup** - Web scraping
 
-**Ideal for**: HR teams, recruitment platforms, or as a demo for AI-powered HR tech.  
+## 🤝 How to Contribute
+Found a bug or have an improvement? 
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a pull request
 
+## 📜 License
+This project is licensed under the MIT License.
 
-
-This description balances **technical depth** with **business value**, making it suitable for:  
-- GitHub READMEs  
-- Project presentations  
-- LinkedIn/portfolio summaries  
-
-Let me know if you'd like to emphasize any specific aspect (e.g., scalability, LLM integration)!
